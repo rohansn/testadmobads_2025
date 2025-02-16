@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'home.dart';
 import 'app_open_ad_manager.dart';
@@ -9,6 +10,10 @@ import 'app_lifecycle_reactor.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   MobileAds.instance.initialize();
+
+   SystemChrome.setEnabledSystemUIMode(
+    SystemUiMode.immersiveSticky, // Hides status bar & navigation buttons
+  );
 
   // Initialize the App Open Ad Manager
   AppOpenAdManager appOpenAdManager = AppOpenAdManager();
